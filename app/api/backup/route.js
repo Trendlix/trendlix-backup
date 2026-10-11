@@ -1,7 +1,8 @@
 import { timingSafeEqual } from "node:crypto";
 import { gzipSync } from "node:zlib";
 import { Readable } from "node:stream";
-import { MongoClient, EJSON } from "mongodb";
+import { MongoClient } from "mongodb";
+import { EJSON } from "bson";
 import { Client as FtpClient } from "basic-ftp";
 
 export const maxDuration = 300;
