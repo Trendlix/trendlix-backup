@@ -37,6 +37,7 @@ const upload = async (files) => {
       user: process.env.FTP_USER,
       password: process.env.FTP_PASSWORD,
       secure: process.env.FTP_SECURE === "true",
+      secureOptions: process.env.FTP_TLS_SERVERNAME ? { servername: process.env.FTP_TLS_SERVERNAME } : undefined,
     });
     await ftp.ensureDir(process.env.FTP_DIR || "/");
     for (const { fileName, buffer } of files) {
